@@ -1,0 +1,44 @@
+body{
+    background-color: #fff;
+}
+#header {
+    display: inline-block;
+    width: 100%;
+}
+#header .banner{
+    float: left;
+    width: calc(100% * (2/3));
+}
+#header .banner img{
+    max-width: 100%;
+}
+#header .banner-right{
+    float: left;
+    width: calc(100% /3);
+}
+#header .logo-menu{
+    
+    display: flex;
+    justify-content: space-between;
+    padding:0 16px;
+}
+#header .logo{
+    height: 35px;
+}
+#header .menu{
+    height: 20px;
+}
+#header .ads{
+    position: relative;
+    margin-top: 16px;
+}
+#header .ads .img{
+    position: absolute;
+    top: 0;
+    left: -64px;
+    right: 0;
+}
+#header .ads img{
+    width: 100%;
+    height: 300px;
+}
