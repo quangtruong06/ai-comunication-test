@@ -1,44 +1,93 @@
-body{
-    background-color: #fff;
+@font-face {
+  font-family: japanese-title-font;
+  src: url(/fonts/tittle_font/ShipporiMincho-Medium.ttf);
+  font-weight: normal;
+  font-style: normal;
 }
-#header {
-    display: inline-block;
-    width: 100%;
+body {
+  background-color: white;
 }
-#header .banner{
-    float: left;
-    width: calc(100% * (2/3));
+header {
+  display: inline-block;
+  width: 100%;
 }
-#header .banner img{
-    max-width: 100%;
+header .banner-left {
+  float: left;
+  width: calc(100% / 3 * 2);
 }
-#header .banner-right{
-    float: left;
-    width: calc(100% /3);
+header .banner-left img {
+  border-radius: 2%;
+  width: 100%;
 }
-#header .logo-menu{
-    
-    display: flex;
-    justify-content: space-between;
-    padding:0 16px;
+header .banner-right {
+  width: calc(100% / 3);
+  float: left;
 }
-#header .logo{
-    height: 35px;
+header .logo-menu {
+  display: flex;
+  padding: 0px 16px;
+  justify-content: space-between;
 }
-#header .menu{
-    height: 20px;
+header .logo {
+  height: 35px;
 }
-#header .ads{
-    position: relative;
-    margin-top: 16px;
+header .menu {
+  height: 24px;
 }
-#header .ads .img{
-    position: absolute;
-    top: 0;
-    left: -64px;
-    right: 0;
+header .show-img {
+  margin-top: 16px;
 }
-#header .ads img{
-    width: 100%;
-    height: 300px;
+header .show-img img {
+  padding: 0px 8px 0px 8px;
+  height: 300px;
+  width: 100%;
+  border-radius: 3%;
+}
+header .ads {
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  width: 95%;
+}
+header .title p {
+  color: #f2accc;
+  font-family: japanese-title-font;
+  font-size: 40px;
+  text-align: center;
+}
+header .title p2 {
+  font-family: japanese-title-font;
+  font-size: 15px;
+  font-style: italic;
+}
+header .nav-button {
+  margin: 0;
+  padding: 0;
+}
+header .nav-button li {
+    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  width: 40px;
+  height: 35px;
+  margin-top: 10px;
+  border-right: 3px solid white;
+}
+header .nav-button li:hover {
+  border-right: 3px solid red;
+  background-color: whitesmoke;
+  color: red;
 }
