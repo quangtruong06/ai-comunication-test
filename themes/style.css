@@ -7,6 +7,16 @@
 body {
   background-color: white;
 }
+body p,
+p1,
+p2 {
+  user-select: none;
+}
+hr {
+  background-color: rgb(172, 166, 166);
+  height: 2px;
+  border: none;
+}
 header {
   display: inline-block;
   width: 100%;
@@ -32,6 +42,7 @@ header .logo {
   height: 35px;
 }
 header .menu {
+    cursor: pointer;
   height: 24px;
 }
 header .show-img {
@@ -76,7 +87,7 @@ header .nav-button {
   padding: 0;
 }
 header .nav-button li {
-    font-weight: bold;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,8 +98,32 @@ header .nav-button li {
   border-right: 3px solid white;
   user-select: none;
 }
-header .nav-button li:hover , header .nav-button li:active {
+header .nav-button li:hover {
+  cursor: pointer;
   border-right: 3px solid red;
   background-color: whitesmoke;
   color: red;
+}
+#news .news-bar {
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#news .news-bar p1 {
+  font-family: japanese-title-font;
+  color: #f2accc;
+  font-weight: bold;
+  font-size: 25px;
+}
+#news .news-bar p2 {
+  font-family: japanese-title-font;
+  font-size: 15px;
+}
+#news .news-bar p2:hover {
+  color: #f2accc;
+  cursor: pointer;
 }
