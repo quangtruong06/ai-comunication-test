@@ -139,17 +139,23 @@ header .nav-button li:hover {
   margin: 0;
   width: 70%;
   border: 1px solid red;
+  display: inline-grid;
+  grid-template-rows: 3;
+  grid-template-columns: 3;
+  gap: 8px;
   justify-content: space-between;
 }
 #news .news-list-item{
+  cursor: pointer;
   border: 1px solid black;
-  display: inline-block;
   list-style-type: none;
-  width: calc(100%/3 - 24px);
+  
   height: 100px;
   display: flex;
   align-items: center;
-  padding-left: 8px;
+}
+#news .news-list-item:hover{
+  color: #f2accc;
 }
 #news .news-img{
   float: left;
