@@ -1,0 +1,195 @@
+$spacing: 16px;
+$pinkColor: #f2accc;
+$jpFont :japanese-title-font ;
+* {
+    h1 {
+        font-family: $jpFont;
+        color: $pinkColor;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    p,
+    p1,
+    p2,
+    h1 {
+        user-select: none;
+    }
+    hr {
+        width: 100%;
+        background-color: black;
+        height: 1px;
+        border: none;
+    }
+}
+body {
+    background-color: white;
+}
+@font-face {
+    font-family: japanese-title-font;
+    src: url(/fonts/tittle_font/ShipporiMincho-Medium.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+header {
+    display: inline-block;
+    width: 100%;
+    & .banner-left {
+        float: left;
+        width: calc(100% / 3 * 2);
+        height: fit-content;
+        img {
+            border-radius: 2%;
+            width: 100%;
+            height: fit-content;
+        }
+    }
+    & .banner-right {
+        width: calc(100% / 3);
+        height: fit-content;
+        float: left;
+        & .logo-menu {
+            display: flex;
+            padding: 0px $spacing;
+            justify-content: space-between;
+            & .logo {
+                height: 35px;
+            }
+            & .menu {
+                cursor: pointer;
+                height: 24px;
+            }
+        }
+        & .show-img{
+            margin-top: $spacing;
+            img {
+                margin: 0px;
+                height: 300px;
+                width: 100%;
+                border-radius: 3%;
+            }
+        }
+        & .ads {
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            & .title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 95%;
+                p {
+                    color: $pinkColor;
+                    font-family: $jpFont;
+                    font-size: 40px;
+                    text-align: center;
+                }
+                p2 {
+                    font-family: $jpFont;
+                    font-size: 15px;
+                    font-style: italic;
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    list-style-type: none;
+                    width: 40px;
+                    height: 35px;
+                    margin-top: 10px;
+                    border-right: 3px solid white;
+                    user-select: none;
+                    &:hover {
+                        cursor: pointer;
+                        border-right: 3px solid red;
+                        background-color: whitesmoke;
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+#news {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .news-bar {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        p {
+            font-family: $jpFont;
+            font-size: 15px;
+            &:hover {
+                color: $pinkColor;
+                cursor: pointer;
+            }
+        }
+    }
+    ul{
+        padding: 0;
+        margin: 8px 0px 0px 0px;
+        width: 70%;
+        display: inline-grid;
+        grid-template-rows: 3;
+        grid-template-columns: 3;
+        gap: 8px;
+        justify-content: space-between;
+        li{
+            cursor: pointer;
+            list-style-type: none;
+
+            height: 100px;
+            display: flex;
+            align-items: center;
+            &:hover {
+                color: $pinkColor;
+            }
+            img {
+                float: left;
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                padding: 12px;
+                border: 1px solid gray;
+            }
+            & .news-details {
+                float: left;
+                margin-left: 8px;
+                div {
+                    padding-bottom: 6px;
+                    font-family: $jpFont;
+                    font-size: 15px;
+                }
+                & .news-date {
+                    font-size: 14px;
+                    font-style: italic;
+                    color: gray;
+                }
+            }
+        }
+    }
+}
+#recommends {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & .recommends-bar {
+        width: 70%;
+    }
+}

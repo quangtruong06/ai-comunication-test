@@ -1,22 +1,33 @@
+* h1 {
+  font-family: japanese-title-font;
+  color: #f2accc;
+  font-weight: bold;
+  font-size: 25px;
+}
+* p,
+* p1,
+* p2,
+* h1 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+* hr {
+  width: 100%;
+  background-color: black;
+  height: 1px;
+  border: none;
+}
+
+body {
+  background-color: white;
+}
+
 @font-face {
   font-family: japanese-title-font;
   src: url(/fonts/tittle_font/ShipporiMincho-Medium.ttf);
   font-weight: normal;
   font-style: normal;
-}
-body {
-  background-color: white;
-}
-body p,
-p1,
-p2 {
-  user-select: none;
-}
-hr {
-  width: 100%;
-  background-color: black;
-  height: 1px;
-  border: none;
 }
 header {
   display: inline-block;
@@ -24,70 +35,74 @@ header {
 }
 header .banner-left {
   float: left;
-  width: calc(100% / 3 * 2);
+  width: 66.6666666667%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 header .banner-left img {
   border-radius: 2%;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 header .banner-right {
-  width: calc(100% / 3);
+  width: 33.3333333333%;
+  height: -moz-fit-content;
+  height: fit-content;
   float: left;
 }
-header .logo-menu {
+header .banner-right .logo-menu {
   display: flex;
   padding: 0px 16px;
   justify-content: space-between;
 }
-header .logo {
+header .banner-right .logo-menu .logo {
   height: 35px;
 }
-header .menu {
+header .banner-right .logo-menu .menu {
   cursor: pointer;
   height: 24px;
 }
-header .show-img {
+header .banner-right .show-img {
   margin-top: 16px;
 }
-header .show-img img {
-  padding: 0px 8px 0px 8px;
+header .banner-right .show-img img {
+  margin: 0px;
   height: 300px;
   width: 100%;
   border-radius: 3%;
 }
-header .ads {
+header .banner-right .ads {
   height: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-header .title {
+header .banner-right .ads .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 100%;
-
   width: 95%;
 }
-header .title p {
+header .banner-right .ads .title p {
   color: #f2accc;
   font-family: japanese-title-font;
   font-size: 40px;
   text-align: center;
 }
-header .title p2 {
+header .banner-right .ads .title p2 {
   font-family: japanese-title-font;
   font-size: 15px;
   font-style: italic;
 }
-header .nav-button {
+header .banner-right .ads ul {
   margin: 0;
   padding: 0;
 }
-header .nav-button li {
+header .banner-right .ads ul li {
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -97,15 +112,18 @@ header .nav-button li {
   height: 35px;
   margin-top: 10px;
   border-right: 3px solid white;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-header .nav-button li:hover {
+header .banner-right .ads ul li:hover {
   cursor: pointer;
   border-right: 3px solid red;
   background-color: whitesmoke;
   color: red;
 }
-#news{
+
+#news {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -118,46 +136,36 @@ header .nav-button li:hover {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  padding: 16px 0px;
 }
-#news .news-bar p1 {
-  font-family: japanese-title-font;
-  color: #f2accc;
-  font-weight: bold;
-  font-size: 25px;
-}
-#news .news-bar p2 {
+#news .news-bar p {
   font-family: japanese-title-font;
   font-size: 15px;
 }
-#news .news-bar p2:hover {
+#news .news-bar p:hover {
   color: #f2accc;
   cursor: pointer;
 }
-#news .news-list{
+#news ul {
   padding: 0;
-  margin: 0;
+  margin: 8px 0px 0px 0px;
   width: 70%;
-  border: 1px solid red;
   display: inline-grid;
   grid-template-rows: 3;
   grid-template-columns: 3;
   gap: 8px;
   justify-content: space-between;
 }
-#news .news-list-item{
+#news ul li {
   cursor: pointer;
-  border: 1px solid black;
   list-style-type: none;
-  
   height: 100px;
   display: flex;
   align-items: center;
 }
-#news .news-list-item:hover{
+#news ul li:hover {
   color: #f2accc;
 }
-#news .news-img{
+#news ul li img {
   float: left;
   height: 60px;
   width: 60px;
@@ -165,18 +173,28 @@ header .nav-button li:hover {
   padding: 12px;
   border: 1px solid gray;
 }
-#news .news-details{
- float: left;
- margin-left: 8px;
+#news ul li .news-details {
+  float: left;
+  margin-left: 8px;
 }
-#news .news-details div{
+#news ul li .news-details div {
   padding-bottom: 6px;
   font-family: japanese-title-font;
   font-size: 15px;
 }
-#news .news-date{
+#news ul li .news-details .news-date {
   font-size: 14px;
   font-style: italic;
   color: gray;
 }
 
+#recommends {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#recommends .recommends-bar {
+  width: 70%;
+}/*# sourceMappingURL=style.css.map */
