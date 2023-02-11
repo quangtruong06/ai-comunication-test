@@ -13,8 +13,9 @@ p2 {
   user-select: none;
 }
 hr {
-  background-color: rgb(172, 166, 166);
-  height: 2px;
+  width: 100%;
+  background-color: black;
+  height: 1px;
   border: none;
 }
 header {
@@ -42,7 +43,7 @@ header .logo {
   height: 35px;
 }
 header .menu {
-    cursor: pointer;
+  cursor: pointer;
   height: 24px;
 }
 header .show-img {
@@ -104,14 +105,20 @@ header .nav-button li:hover {
   background-color: whitesmoke;
   color: red;
 }
-#news .news-bar {
-  padding: 16px 0px;
+#news{
   width: 100%;
-  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#news .news-bar {
+  width: 70%;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 16px 0px;
 }
 #news .news-bar p1 {
   font-family: japanese-title-font;
@@ -127,3 +134,43 @@ header .nav-button li:hover {
   color: #f2accc;
   cursor: pointer;
 }
+#news .news-list{
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+#news .news-list-item{
+  border: 1px solid black;
+  display: inline-block;
+  list-style-type: none;
+  width: calc(100%/3 - 24px);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+#news .news-img{
+  float: left;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  padding: 12px;
+  border: 1px solid gray;
+}
+#news .news-details{
+ float: left;
+ margin-left: 8px;
+}
+#news .news-details div{
+  padding-bottom: 6px;
+  font-family: japanese-title-font;
+  font-size: 15px;
+}
+#news .news-date{
+  font-size: 14px;
+  font-style: italic;
+  color: gray;
+}
+
