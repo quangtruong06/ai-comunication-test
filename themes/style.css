@@ -3,19 +3,22 @@
   color: #f2accc;
   font-weight: bold;
   font-size: 25px;
-}
-* p,
-* p1,
-* p2,
-* h1 {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
+* p,
+* p1,
+* p2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 15px;
+}
 * hr {
   width: 100%;
-  background-color: black;
-  height: 1px;
+  background-color: gray;
+  height: 0.3px;
   border: none;
 }
 
@@ -30,16 +33,18 @@ body {
   font-style: normal;
 }
 header {
-  display: inline-block;
+  display: flex;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 header .banner-left {
   float: left;
   width: 66.6666666667%;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
 }
 header .banner-left img {
+  display: flexbox;
   border-radius: 2%;
   width: 100%;
   height: -moz-fit-content;
@@ -139,7 +144,6 @@ header .banner-right .ads ul li:hover {
 }
 #news .news-bar p {
   font-family: japanese-title-font;
-  font-size: 15px;
 }
 #news .news-bar p:hover {
   color: #f2accc;
@@ -175,15 +179,13 @@ header .banner-right .ads ul li:hover {
 }
 #news ul li .news-details {
   float: left;
-  margin-left: 8px;
+  margin-left: 16px;
 }
 #news ul li .news-details div {
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   font-family: japanese-title-font;
-  font-size: 15px;
 }
 #news ul li .news-details .news-date {
-  font-size: 14px;
   font-style: italic;
   color: gray;
 }
