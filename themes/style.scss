@@ -395,7 +395,7 @@ footer{
         padding: 30px 30px 0px 30px;
         & .contact-logo{
             height: 50px;
-            margin-bottom: $spacing;
+            margin-bottom: 4px;
         }
         p{
             font-size: 13px;
@@ -429,23 +429,30 @@ footer{
         height: 100%;
         width: calc(100%/3);
         box-sizing: border-box;
-        h1{
+        & .search-header{
             margin: 0;
+            font-size: 30px;
+            font-family: monospace;
             text-transform: uppercase;
             color: $deepPink;
-            
+            margin-bottom: 8px;
         }
         & .dropdown-btn{
             background-color: white;
-            width: 60%;
-            margin: 0;
-            padding: 0;
             height: fit-content;
+            width: 70%;
             border: none;
             border-bottom: 0.5px solid;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 8px 16px;
+            box-sizing: border-box;
+            p{
+                font-family: $jpFont;
+                size: 13px;
+                margin: 0;
+            }
         }
     }
 }

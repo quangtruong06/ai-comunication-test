@@ -412,7 +412,7 @@ footer .contact {
 }
 footer .contact .contact-logo {
   height: 50px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 footer .contact p {
   font-size: 13px;
@@ -446,21 +446,29 @@ footer .shop-search {
   width: 33.3333333333%;
   box-sizing: border-box;
 }
-footer .shop-search h1 {
+footer .shop-search .search-header {
   margin: 0;
+  font-size: 30px;
+  font-family: monospace;
   text-transform: uppercase;
   color: #ff1493;
+  margin-bottom: 8px;
 }
 footer .shop-search .dropdown-btn {
   background-color: white;
-  width: 60%;
-  margin: 0;
-  padding: 0;
   height: -moz-fit-content;
   height: fit-content;
+  width: 70%;
   border: none;
   border-bottom: 0.5px solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+footer .shop-search .dropdown-btn p {
+  font-family: japanese-title-font;
+  size: 13px;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
