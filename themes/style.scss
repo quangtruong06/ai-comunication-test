@@ -4,6 +4,15 @@ $pinkColor: #f2accc;
 $jpFont: japanese-title-font;
 $default-font-size: 15px;
 $title-font-size: 25px;
+$deepPink: #ff1493;
+@mixin barAttr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+}
 
 * {
     h1 {
@@ -28,6 +37,7 @@ $title-font-size: 25px;
 }
 body {
     background-color: white;
+    height: 100%;
 }
 @font-face {
     font-family: japanese-title-font;
@@ -81,28 +91,29 @@ header {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            & .title {
+            & .content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 height: 100%;
                 width: 95%;
-                p {
+                & .title {
                     color: $pinkColor;
                     font-family: $jpFont;
                     font-size: 40px;
                     text-align: center;
                 }
-                p2 {
+                & .description {
                     font-family: $jpFont;
                     font-size: $default-font-size;
                     font-style: italic;
                 }
             }
-            ul {
+            & .nav-button {
                 margin: 0;
                 padding: 0;
+
                 li {
                     font-weight: bold;
                     display: flex;
@@ -116,21 +127,22 @@ header {
                     user-select: none;
                     &:hover {
                         cursor: pointer;
-                        border-right: 3px solid red;
                         background-color: whitesmoke;
                         color: red;
                     }
+                }
+                & .active {
+                    cursor: pointer;
+                    border-right: 3px solid red;
+                    background-color: whitesmoke;
+                    color: red;
                 }
             }
         }
     }
 }
 #news {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include barAttr();
     & .news-bar {
         width: 70%;
         display: flex;
@@ -149,23 +161,24 @@ header {
         padding: 0;
         margin: $small-spacing 0px 0px 0px;
         width: 70%;
-        display: inline-grid;
-        grid-template-rows: 3;
-        grid-template-columns: 3;
-        gap: $small-spacing;
+        display: inline-block;
         justify-content: space-between;
         li {
             cursor: pointer;
             list-style-type: none;
-
             height: 100px;
-            display: flex;
+            width: calc(100% / 3);
+            float: left;
+            display: grid;
+            grid-template-columns: 60px auto;
+            grid-column-gap: 16px;
+            grid-row-gap: 16px;
             align-items: center;
+
             &:hover {
                 color: $pinkColor;
             }
             img {
-                float: left;
                 height: 60px;
                 width: 60px;
                 border-radius: 50%;
@@ -173,7 +186,6 @@ header {
                 border: 1px solid gray;
             }
             & .news-details {
-                float: left;
                 margin-left: $spacing;
                 div {
                     padding-bottom: $small-spacing;
@@ -188,12 +200,227 @@ header {
     }
 }
 #recommends {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    & .recommends-bar {
+    margin-top: $spacing;
+    @include barAttr();
+    & .recommends-contents {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        gap: 50px;
+
+        margin-top: $spacing;
         width: 70%;
+        & .recommends-left {
+            width: 100%;
+            & .recommends-bar {
+                margin-bottom: 50px;
+                h1 {
+                    margin: 0;
+                }
+            }
+            & .recommend1 {
+                cursor: pointer;
+                height: fit-content;
+                & .recommend1-banner {
+                    position: relative;
+                    width: 100%;
+                    height: 200px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    p {
+                        position: absolute;
+                        left: -40px;
+                        bottom: -20px;
+                        padding: 0 40px;
+                        height: 40px;
+                        margin: 0;
+                        text-align: center;
+                        line-height: 40px;
+                        background-color: $deepPink;
+                        color: white;
+                        font-size: 20px;
+                        font-family: $jpFont;
+                    }
+                }
+                hr {
+                    margin-top: 36px;
+                    color: black;
+                    width: 50%;
+                    margin-left: 0;
+                }
+                p {
+                    margin: 0;
+                    width: fit-content;
+                    height: fit-content;
+                    font-family: $jpFont;
+                    font-size: $default-font-size;
+                }
+            }
+        }
+        & .recommends-right {
+            margin-top: $spacing;
+            display: grid;
+            gap: 50px;
+            width: 100%;
+            & .recommend2 {
+                cursor: pointer;
+                grid-template-columns: 50% auto;
+                grid-column-gap: 16px;
+                grid-row-gap: 16px;
+                display: grid;
+                & .recommend2-banner {
+                    height: 200px;
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                & .recommend2-content {
+                    width: 100%;
+                    margin-left: $spacing;
+                    position: relative;
+                    & .recommend2-banner-title {
+                        position: absolute;
+                        left: -66px;
+                        top: 20px;
+                        padding: 0 40px;
+                        height: 40px;
+                        margin: 0;
+                        text-align: center;
+                        line-height: 40px;
+                        background-color: $deepPink;
+                        color: white;
+                        font-size: 20px;
+                        font-family: $jpFont;
+                    }
+                    hr {
+                        margin-top: 86px;
+                        width: 40%;
+                        margin-left: 0;
+                    }
+                    p {
+                        margin: 0;
+                        width: fit-content;
+                        height: fit-content;
+                        font-family: $jpFont;
+                        font-size: $default-font-size;
+                    }
+                }
+            }
+        }
+    }
+}
+#floors {
+    @include barAttr();
+    & .floors-bar {
+        width: 70%;
+        h1 {
+            margin: 0;
+        }
+    }
+    hr {
+        margin-top: $spacing;
+    }
+    & .floors-list {
+        width: 70%;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 50% auto;
+        gap: 16px;
+        li {
+            user-select: none;
+            cursor: pointer;
+            padding: 0px 16px;
+            box-sizing: border-box;
+            display: flex;
+            background-color: #eeeeee;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 120px;
+            list-style-type: none;
+            &:hover {
+                color: deeppink;
+            }
+            & .floors-content {
+                margin-left: $spacing;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                vertical-align: middle;
+                h1 {
+                    font-size: 20px;
+                    color: deeppink;
+                }
+                p {
+                    margin-left: $small-spacing;
+                    font-size: 14px;
+                    font-family: $jpFont;
+                }
+            }
+            img {
+                margin-right: $spacing;
+                height: 80px;
+                width: 80px;
+            }
+        }
+    }
+}
+footer{
+    display: inline-block;
+    margin-top: 60px;
+    border: solid;
+    width: 100%;
+    height: 300px;
+    & .footer-img{
+        float: left;
+        width: 30%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            
+        }
+    }
+    & .contact{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        float: left;
+        width: 30%;
+        box-sizing: border-box;
+        padding: 0px 30px;
+        & .contact-logo{
+            height: 50px;
+            margin-bottom: $spacing;
+        }
+        p{
+            font-size: 13px;
+            font-family: $jpFont;
+            margin: 4px 0px;
+        }
+        & .contact-banner{
+            width: 100%;
+            margin: $spacing 0;
+            padding: 0;
+            display: inline-block;
+            li{
+                padding-right: 16px;
+                width: calc(100%/3);
+                box-sizing: border-box;
+                float: left;
+                list-style-type: none;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        & .copyright{
+            font-size: 10px;
+            color: gray;
+        }
     }
 }

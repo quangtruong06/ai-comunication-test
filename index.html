@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SHOP NEWS</title>
+    <script src="scripts/jquery-3.6.3.min.js"></script>
     <link rel="icon" type="image/x-icon" href="themes/images/header_logo.png" />
     <link rel="stylesheet" href="/themes/style.css" />
   </head>
@@ -21,12 +22,12 @@
           <img src="themes/images/pro1.png" />
         </div>
         <div class="ads">
-          <div class="title">
-            <p>豊橋駅ビル<br />カルミア</p>
-            <p2>毎日暮らしのサポート・生活ステーション</p2>
+          <div class="content">
+            <p class="title">豊橋駅ビル<br />カルミア</p>
+            <p class="description">毎日暮らしのサポート・生活ステーション</p>
           </div>
           <ul class="nav-button">
-            <li>1</li>
+            <li class="active">1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>
@@ -43,38 +44,194 @@
         </div>
         <hr />
         <ul>
-            <li>
-                <img class="news-img"  src="themes/images/news-img.png"/>
-                <div class="news-details">
-                    <div class="news-date">
-                        2020/05/28
-                    </div>
-                    <div class="news-title">
-                      【カルミア俱楽部会員様へ】<br/>
-                        ポイント交換についてのご案内
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img class="news-img"  src="themes/images/news-img.png"/>
-                <div class="news-details">
-                    <div class="news-date">
-                        2020/05/28
-                    </div>
-                    <div class="news-title">
-                      【カルミア俱楽部会員様へ】<br/>
-                        ポイント交換についてのご案内
-                    </div>
-                </div>
-            </li>
+          <li>
+            <img class="news-img" src="themes/images/news-img.png" />
+            <div class="news-details">
+              <div class="news-date">2020/05/28</div>
+              <div class="news-title">
+                【カルミア俱楽部会員様へ】<br />
+                ポイント交換についてのご案内
+              </div>
+            </div>
+          </li>
+          <li>
+            <img class="news-img" src="themes/images/news-img.png" />
+            <div class="news-details">
+              <div class="news-date">2020/05/28</div>
+              <div class="news-title">
+                【カルミア俱楽部会員様へ】<br />
+                ポイント交換についてのご案内
+              </div>
+            </div>
+          </li>
+          <li>
+            <img class="news-img" src="themes/images/news-img.png" />
+            <div class="news-details">
+              <div class="news-date">2020/05/28</div>
+              <div class="news-title">
+                【カルミア俱楽部会員様へ】<br />
+                ポイント交換についてのご案内
+              </div>
+            </div>
+          </li>
+          <li>
+            <img class="news-img" src="themes/images/news-img.png" />
+            <div class="news-details">
+              <div class="news-date">2020/05/28</div>
+              <div class="news-title">
+                【カルミア俱楽部会員様へ】<br />
+                ポイント交換についてのご案内
+              </div>
+            </div>
+          </li>
+          <li>
+            <img class="news-img" src="themes/images/news-img.png" />
+            <div class="news-details">
+              <div class="news-date">2020/05/28</div>
+              <div class="news-title">
+                【カルミア俱楽部会員様へ】<br />
+                ポイント交換についてのご案内
+              </div>
+            </div>
+          </li>
+          <li>
+            <img class="news-img" src="themes/images/news-img.png" />
+            <div class="news-details">
+              <div class="news-date">2020/05/28</div>
+              <div class="news-title">
+                【カルミア俱楽部会員様へ】<br />
+                ポイント交換についてのご案内
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
       <section id="recommends">
-        <div class="recommends-bar">
-          <h1>RECOMMEND</h1>
+        <div class="recommends-contents">
+          <div class="recommends-left">
+            <div class="recommends-bar">
+              <h1>RECOMMEND</h1>
+            </div>
+            <div class="recommend1">
+              <div class="recommend1-banner">
+                <img src="themes/images/recommend1.png" />
+                <p>おすすめおみやげ</p>
+              </div>
+              <hr />
+              <p>
+                豊橋の名産を筆頭に、定番からの品から職場で喜ばれるお土産などをご紹介します
+              </p>
+            </div>
+          </div>
+          <div class="recommends-right">
+            <div class="recommend2">
+              <div class="recommend2-banner">
+                <img src="themes/images/recommend2.png" />
+              </div>
+              <div class="recommend2-content">
+                <p class="recommend2-banner-title">豊橋・東三河のみどろ</p>
+                <hr />
+                <p>
+                  豊橋・東三河は、 「ほの国」と呼ばれた豊<br />
+                  かな実りのある地域でした。<br />
+                  海・山・河と豊かな自然と文化に恵まれ、<br />
+                  魅力あふれるエリアです。
+                </p>
+              </div>
+            </div>
+            <div class="recommend2">
+              <div class="recommend2-banner">
+                <img src="themes/images/recommend3.png" />
+              </div>
+              <div class="recommend2-content">
+                <p class="recommend2-banner-title">カルミアちゃん's EYE</p>
+                <hr />
+                <p>
+                  カルミアのキャラクター、カルミアちゃん。<br />
+                  「ちょっといいこと」を探して<br />
+                  カルミアをいつも探索か<br />
+                  旬の「いいこと」お届けします。
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        
+      </section>
+      <section id="floors">
+        <div class="floors-bar">
+          <h1>FLOORS</h1>
+        </div>
+        <hr />
+        <ul class="floors-list">
+          <li>
+            <div class="floors-content">
+              <h1>4F</h1>
+              <p>ファッション&カルチャー</p>
+            </div>
+            <img src="themes/images/4f.png" />
+          </li>
+          <li>
+            <div class="floors-content">
+              <h1>3F</h1>
+              <p>ファッション&グッズ</p>
+            </div>
+            <img src="themes/images/3f.png" />
+          </li>
+          <li>
+            <div class="floors-content">
+              <h1>2F 北館</h1>
+              <p>フーィ&サービス</p>
+            </div>
+            <img src="themes/images/2fa.png" />
+          </li>
+          <li>
+            <div class="floors-content">
+              <h1>2F 南館</h1>
+              <p>デイリー＆ギフト<br />スイーツ＆サービス</p>
+            </div>
+            <img src="themes/images/2fb.png" />
+          </li>
+          <li>
+            <div class="floors-content">
+              <h1>1F</h1>
+              <p>レストラン</p>
+            </div>
+            <img src="themes/images/1f.png" />
+          </li>
+          <li>
+            <div class="floors-content">
+              <h1>B1F</h1>
+              <p>ライフ&バハラエティ</p>
+            </div>
+            <img src="themes/images/b1f.png" />
+          </li>
+        </ul>
       </section>
     </main>
+    <footer>
+      <div class="footer-img">
+        <img src="themes/images/banner.png" />
+      </div>
+      <div class="contact">
+        <a href="https://www.toyohashi-kalmia.jp/"
+          ><img src="themes/images/header_logo.png" alt="" class="contact-logo"
+        /></a>
+        <p class="shop-address">〒440-0075 豊橋市花田町四宿無番地</p>
+        <p class="shop-phone">TEL : 0532 - 55- 2711</p>
+        <ul class="contact-banner">
+          <li>
+            <img src="themes/images/ft_1.png"/>
+          </li>
+          <li>
+            <img src="themes/images/ft_2.png"/>
+          </li>
+          <li>
+            <img src="themes/images/ft_3.png"/>
+          </li>
+        </ul>
+        <p class="copyright">Copyright © Toyohashi Station Building Co.,Ltd. All right reserved</p>
+      </div>
+    </footer>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
