@@ -393,8 +393,9 @@ footer {
 }
 footer .footer-img {
   float: left;
-  width: 30%;
+  width: 33.3333333333%;
   height: 100%;
+  box-sizing: border-box;
 }
 footer .footer-img img {
   width: 100%;
@@ -404,11 +405,10 @@ footer .contact {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   float: left;
-  width: 30%;
+  width: 33.3333333333%;
   box-sizing: border-box;
-  padding: 0px 30px;
+  padding: 30px 30px 0px 30px;
 }
 footer .contact .contact-logo {
   height: 50px;
@@ -438,4 +438,29 @@ footer .contact .contact-banner li img {
 footer .contact .copyright {
   font-size: 10px;
   color: gray;
+}
+footer .shop-search {
+  padding: 30px 30px 0px 30px;
+  float: left;
+  height: 100%;
+  width: 33.3333333333%;
+  box-sizing: border-box;
+}
+footer .shop-search h1 {
+  margin: 0;
+  text-transform: uppercase;
+  color: #ff1493;
+}
+footer .shop-search .dropdown-btn {
+  background-color: white;
+  width: 60%;
+  margin: 0;
+  padding: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: none;
+  border-bottom: 0.5px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
