@@ -5,6 +5,35 @@ $jpFont: japanese-title-font;
 $default-font-size: 15px;
 $title-font-size: 25px;
 $deepPink: #ff1493;
+
+// reponsive
+$XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1170px;
+
+// media queries
+@mixin Responsive($canvas) {
+    @if $canvas == XS {
+        @media only screen and (min-width: $XS) {
+            @content;
+        }
+    } @else if $canvas == SM {
+        @media only screen and (min-width: $SM) {
+            @content;
+        }
+    } @else if $canvas == MD {
+        @media only screen and (min-width: $MD) {
+            @content;
+        }
+    } @else if $canvas == XL {
+        @media only screen and (min-width: $XL) {
+            @content;
+        }
+    }
+}
+
+//
 @mixin barAttr {
     width: 100%;
     display: flex;
@@ -39,6 +68,18 @@ body {
     background-color: white;
     height: 100%;
 }
+body.showmenu {
+    & .header-menu {
+        display: block;
+    }
+    & .banner-right {
+        & .logo-menu {
+            .menu {
+                background-image: url(images/ic_menu_x.PNG);
+            }
+        }
+    }
+}
 @font-face {
     font-family: japanese-title-font;
     src: url(/fonts/tittle_font/ShipporiMincho-Medium.ttf);
@@ -46,22 +87,23 @@ body {
     font-style: normal;
 }
 header {
+    position: relative;
     display: flex;
     width: 100%;
-    height: fit-content;
     & .banner-left {
         float: left;
-        width: calc(100% / 3 * 2);
+        width: calc(100% - 350px);
         height: auto;
         img {
-            display: flexbox;
             border-radius: 2%;
+            height: 100%;
             width: 100%;
-            height: fit-content;
+            object-fit: cover;
         }
     }
     & .banner-right {
-        width: calc(100% / 3);
+        position: relative;
+        width: 350px;
         height: fit-content;
         float: left;
         & .logo-menu {
@@ -73,16 +115,21 @@ header {
             }
             & .menu {
                 cursor: pointer;
-                height: 24px;
+                height: 35px;
+                width: 32px;
+                background-repeat: no-repeat;
+                background-image: url(images/menu_logo.png);
             }
         }
         & .show-img {
+            position: relative;
+            left: -30%;
             margin-top: $spacing;
+            width: calc(130%);
             img {
                 margin: 0px;
                 height: 300px;
                 width: 100%;
-                border-radius: 3%;
             }
         }
         & .ads {
@@ -140,15 +187,34 @@ header {
             }
         }
     }
+    & .header-menu {
+        display: none;
+        position: absolute;
+        text-align: center;
+        right: 0;
+        top: 35px;
+        height: 100%;
+        width: 350px;
+        background: white;
+    }
+}
+main {
+    padding: 16px;
 }
 #news {
     @include barAttr();
     & .news-bar {
-        width: 70%;
+        width: 80%;
         display: flex;
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
+        @include Responsive(SM) {
+            width: 100%;
+        }
+        @include Responsive(MD) {
+            width: 80%;
+        }
         p {
             font-family: $jpFont;
             &:hover {
@@ -157,18 +223,25 @@ header {
             }
         }
     }
+
     ul {
         padding: 0;
         margin: $small-spacing 0px 0px 0px;
-        width: 70%;
-        display: inline-block;
-        justify-content: space-between;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+
+        @include Responsive(SM) {
+            width: 100%;
+        }
+        @include Responsive(MD) {
+            width: 80%;
+        }
         li {
             cursor: pointer;
             list-style-type: none;
-            height: 100px;
-            width: calc(100% / 3);
-            float: left;
             display: grid;
             grid-template-columns: 60px auto;
             grid-column-gap: 16px;
@@ -195,6 +268,12 @@ header {
                     font-style: italic;
                     color: gray;
                 }
+                & .new-title{
+                    font-size: 15px;
+                    @include Responsive(SM) {
+                        font-size: 10px;
+                    }
+                }
             }
         }
     }
@@ -206,9 +285,14 @@ header {
         display: grid;
         grid-template-columns: 30% 70%;
         gap: 50px;
-
         margin-top: $spacing;
-        width: 70%;
+        width: 80%;
+        @include Responsive(SM) {
+            width: 100%;
+        }
+        @include Responsive(MD) {
+            width: 80%;
+        }
         & .recommends-left {
             width: 100%;
             & .recommends-bar {
@@ -279,7 +363,6 @@ header {
                 }
                 & .recommend2-content {
                     width: 100%;
-                    margin-left: $spacing;
                     position: relative;
                     & .recommend2-banner-title {
                         position: absolute;
@@ -315,7 +398,13 @@ header {
 #floors {
     @include barAttr();
     & .floors-bar {
-        width: 70%;
+        width: 80%;
+        @include Responsive(SM) {
+            width: 100%;
+        }
+        @include Responsive(MD) {
+            width: 80%;
+        }
         h1 {
             margin: 0;
         }
@@ -324,7 +413,13 @@ header {
         margin-top: $spacing;
     }
     & .floors-list {
-        width: 70%;
+        width: 80%;
+        @include Responsive(SM) {
+            width: 100%;
+        }
+        @include Responsive(MD) {
+            width: 80%;
+        }
         padding: 0;
         display: grid;
         grid-template-columns: 50% auto;
@@ -368,68 +463,117 @@ header {
         }
     }
 }
-footer{
-    display: inline-block;
-    margin-top: 60px;
-    border: solid;
-    width: 100%;
-    height: 300px;
-    & .footer-img{
-        float: left;
-        width: calc(100%/3);
-        height: 100%;
-        box-sizing: border-box;
-        img{
-            width: 100%;
-            height: 100%;
-            
+#slider {
+    width: 95%;
+    margin: auto;
+    @include Responsive(SM) {
+        width: 95%;
+    }
+    @include Responsive(MD) {
+        width: 80%;
+    }
+    & .news-bar {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+            font-family: $jpFont;
+            &:hover {
+                color: $pinkColor;
+                cursor: pointer;
+            }
         }
     }
-    & .contact{
+    .slide-item {
+        margin: 16px;
+
+        & img {
+            max-width: 100%;
+            border-radius: 5px;
+            height: 200px;
+            width: 100%;
+        }
+        & .date {
+            margin-top: 8px;
+            color: $deepPink;
+            font-size: 18px;
+        }
+        & .description {
+            @include Responsive(SM) {
+                font-size: 13px;
+            }
+            margin-top: 8px;
+            font-size: 18px;
+            font-family: $jpFont;
+            &:hover{
+                color: $deepPink;
+                cursor: pointer;
+            }
+        }
+    }
+}
+footer {
+    display: inline-block;
+    margin-top: 60px;
+    width: 100%;
+    height: 300px;
+    & .footer-img {
+        float: left;
+        width: calc(100% / 3);
+        height: 100%;
+        box-sizing: border-box;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & .contact {
         height: 100%;
         display: flex;
         flex-direction: column;
         float: left;
-        width: calc(100%/3);
+        width: calc(100% / 3);
         box-sizing: border-box;
         padding: 30px 30px 0px 30px;
-        & .contact-logo{
+        & .contact-logo {
             height: 50px;
             margin-bottom: 4px;
         }
-        p{
+        p {
             font-size: 13px;
             font-family: $jpFont;
             margin: 4px 0px;
         }
-        & .contact-banner{
+        & .contact-banner {
             width: 100%;
             margin: $spacing 0;
             padding: 0;
             display: inline-block;
-            li{
+            li {
                 padding-right: 16px;
-                width: calc(100%/3);
+                width: calc(100% / 3);
                 box-sizing: border-box;
                 float: left;
                 list-style-type: none;
-                img{
+                img {
                     width: 100%;
                 }
             }
         }
-        & .copyright{
+        & .copyright {
             font-size: 10px;
             color: gray;
         }
     }
-    & .shop-search{
+    & .shop-search {
         padding: 30px 30px 0px 30px;
         float: left;
         height: 100%;
-        width: calc(100%/3);
+        width: calc(100% / 3);
         box-sizing: border-box;
-        & .search-header{
+        & .search-header {
             margin: 0;
             font-size: 30px;
             font-family: monospace;
@@ -437,21 +581,78 @@ footer{
             color: $deepPink;
             margin-bottom: 8px;
         }
-        & .dropdown-btn{
+        & .dropdown-btn {
             background-color: white;
             height: fit-content;
-            width: 70%;
+            width: 60%;
             border: none;
             border-bottom: 0.5px solid;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 8px 16px;
+            padding: 8px 16px 8px 0px;
             box-sizing: border-box;
-            p{
+            p {
                 font-family: $jpFont;
                 size: 13px;
                 margin: 0;
+            }
+        }
+        & .search-bar {
+            width: 100%;
+            margin-top: 16px;
+            form {
+                width: 100%;
+                & .type-search {
+                    border: none;
+                    outline: none;
+                    border-bottom: 0.5px solid;
+                    height: 30px;
+                    padding-right: 10px;
+                    font-family: $jpFont;
+                    width: 65%;
+                }
+                & .submit-btn {
+                    font-family: $jpFont;
+                    margin-left: 8px;
+                    background-color: deeppink;
+                    color: white;
+                    width: auto;
+                    padding: 0px 16px;
+                    box-sizing: border-box;
+                    height: 30px;
+                    font-size: 14px;
+                    border: none;
+                    border-radius: 5%;
+                    &:hover {
+                        background-color: deeppink;
+                        opacity: 0.7;
+                        cursor: pointer;
+                    }
+                    &:focus {
+                        outline: none !important;
+                    }
+                }
+            }
+        }
+        & .nav-links {
+            margin-top: $spacing;
+            list-style-type: none;
+            margin: 40px 0px 0px 0px;
+            padding: 0;
+            li {
+                display: block;
+                margin-right: 16px;
+                float: left;
+                a {
+                    text-decoration: underline;
+                    font-size: 13px;
+                    color: black;
+                    font-family: $jpFont;
+                    &:hover {
+                        color: blue;
+                    }
+                }
             }
         }
     }

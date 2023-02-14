@@ -35,3 +35,12 @@ $(".nav-button li").click(function () {
       break;
   }
 });
+$("header .banner-right .logo-menu .menu").click(function(){
+  $("body").toggleClass("showmenu");
+});
+$('.slider-items').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+$('#search-form').submit(function(){return false;});
