@@ -591,11 +591,39 @@ footer .shop-search .search-header {
   color: #ff1493;
   margin-bottom: 8px;
 }
-footer .shop-search .dropdown-btn {
+footer .shop-search .dropdown {
+  width: 60%;
+}
+footer .shop-search .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-top-right-radius: 5%;
+}
+footer .shop-search .dropdown:hover .dropdown-content {
+  width: 18%;
+  display: block;
+}
+footer .shop-search .dropdown:hover .dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+footer .shop-search .dropdown:hover .dropdown-content a:hover {
+  background-color: #ddd;
+}
+footer .shop-search .dropdown .dropdown-btn {
   background-color: white;
   height: -moz-fit-content;
   height: fit-content;
-  width: 60%;
+  width: 100%;
   border: none;
   border-bottom: 0.5px solid;
   display: flex;
@@ -604,7 +632,7 @@ footer .shop-search .dropdown-btn {
   padding: 8px 16px 8px 0px;
   box-sizing: border-box;
 }
-footer .shop-search .dropdown-btn p {
+footer .shop-search .dropdown .dropdown-btn p {
   font-family: japanese-title-font;
   size: 13px;
   margin: 0;
