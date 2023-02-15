@@ -35,7 +35,7 @@ $(".nav-button li").click(function () {
       break;
   }
 });
-$("#scrolltop").click(function(){
+$("#scroll-to-top").click(function(){
   $('html, body').animate({scrollTop:0}, 'slow');
 });
 $("header .banner-right .logo-menu .menu").click(function(){

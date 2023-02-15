@@ -64,17 +64,23 @@ $XL: 1170px;
         border: none;
     }
 }
-#scrolltop{
+#scroll-to-top{
     position: fixed;
     bottom: 100px;
     right: 16px;
     z-index: 999;
     width: 32px;
-    height: 32px;
+    height: 32px;   
     border-radius: 50%;
     cursor: pointer;
     background-color: #fc3d9f ;
-    // border: 1px solid #fc3d9f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        display: inline-block;
+        color: white;
+    }
 }
 body {
 
@@ -138,9 +144,10 @@ header {
     & .banner-right {
         position: relative;
         width: 350px;
-        height: fit-content;
+        height: auto;
         float: left;
         & .logo-menu {
+            height: 40px;
             display: flex;
             padding: 0px $spacing;
             justify-content: space-between;
@@ -168,16 +175,18 @@ header {
             }
         }
         & .ads {
+            height: calc(100% - 310px);
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             & .content {
+                float: left;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                height: 100%;
+                height: fit-content;
                 width: 95%;
                 & .title {
                     color: $pinkColor;
@@ -192,6 +201,7 @@ header {
                 }
             }
             & .nav-button {
+                float: left;
                 margin: 0;
                 padding: 0;
 
@@ -552,14 +562,20 @@ main {
         }
     }
     .slide-item {
+        overflow: hidden;
         margin: 16px;
         & img {
             background-color: deeppink;
-            max-width: 100%;
             border-radius: 5px;
             height: 150px;
             width: 100%;
-            object-fit: cover;
+            object-fit: fill;
+            transition: 0.5s all ease-in;
+            overflow: hidden;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.3);
+            }
         }
         & .date {
             margin-top: 8px;
