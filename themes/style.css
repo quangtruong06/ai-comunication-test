@@ -623,7 +623,9 @@ footer .footer-img img {
      object-fit: cover;
 }
 footer .contact {
+  padding-top: 16px;
   height: 100%;
+  box-sizing: border-box;
 }
 footer .contact a {
   width: -moz-fit-content;
@@ -662,6 +664,8 @@ footer .contact .copyright {
   color: gray;
 }
 footer .shop-search {
+  box-sizing: border-box;
+  padding-top: 16px;
   height: 100%;
 }
 footer .shop-search .search-header {

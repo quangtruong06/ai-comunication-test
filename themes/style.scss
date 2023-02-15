@@ -611,7 +611,9 @@ footer {
         }
     }
     & .contact {
+        padding-top: $spacing;
         height: 100%;
+        box-sizing: border-box;
         a {
             width: fit-content;
             & .contact-logo {
@@ -649,6 +651,8 @@ footer {
         }
     }
     & .shop-search {
+        box-sizing: border-box;
+        padding-top: $spacing;
         height: 100%;
         & .search-header {
             margin: 0;
