@@ -47,3 +47,7 @@ $('.slider-items').slick({
   slidesToScroll: 3
 });
 $('#search-form').submit(function(){return false;});
+$(".dropdown-content a").click(function(){
+  var text = $(this).text();
+  $(".dropdown-btn p").text(text);
+});
