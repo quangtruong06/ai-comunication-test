@@ -107,16 +107,6 @@ body.show-menu {
         & .ads{
             display: none;
         }
-        & .header-menu{
-            & .main-menu{
-                & .main-menu-title{
-                    span{
-                        font-size: 25px;
-                        color: $deepPink;
-                    }
-                }
-            }
-        }
     }
 }
 @font-face {
@@ -254,6 +244,10 @@ header {
                     font-weight: bold;
                     font-size: 18px;
                 }
+                &:hover{
+                    color: $deepPink;
+                    cursor: pointer;
+                }
             }
             
            }
@@ -269,6 +263,10 @@ header {
             & div{
                 color: #f2accc;
                 font-size: 13px;
+                &:hover{
+                    color: $deepPink;
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -601,7 +599,9 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 8px;
     grid-row-gap: 8px;
-    height: auto;
+    height: fit-content;
+    min-height: 200px;
+    max-height: 300px;
     & .footer-img {
         height: 100%;
         img {
@@ -611,6 +611,7 @@ footer {
         }
     }
     & .contact {
+        height: 100%;
         a {
             width: fit-content;
             & .contact-logo {
@@ -648,7 +649,7 @@ footer {
         }
     }
     & .shop-search {
-
+        height: 100%;
         & .search-header {
             margin: 0;
             font-size: 30px;

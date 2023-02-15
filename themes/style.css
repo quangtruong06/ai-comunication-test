@@ -61,10 +61,6 @@ body.show-menu .banner-right .show-img {
 body.show-menu .banner-right .ads {
   display: none;
 }
-body.show-menu .banner-right .header-menu .main-menu .main-menu-title span {
-  font-size: 25px;
-  color: #ff1493;
-}
 
 @font-face {
   font-family: japanese-title-font;
@@ -209,6 +205,10 @@ header .header-menu .main-menu .main-menu-title .title-lar {
   font-weight: bold;
   font-size: 18px;
 }
+header .header-menu .main-menu .main-menu-title:hover {
+  color: #ff1493;
+  cursor: pointer;
+}
 header .header-menu .sub-menu {
   position: absolute;
   left: 32px;
@@ -222,6 +222,10 @@ header .header-menu .sub-menu {
 header .header-menu .sub-menu div {
   color: #f2accc;
   font-size: 13px;
+}
+header .header-menu .sub-menu div:hover {
+  color: #ff1493;
+  cursor: pointer;
 }
 
 main {
@@ -604,7 +608,10 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 8px;
   grid-row-gap: 8px;
-  height: auto;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 200px;
+  max-height: 300px;
 }
 footer .footer-img {
   height: 100%;
@@ -614,6 +621,9 @@ footer .footer-img img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+footer .contact {
+  height: 100%;
 }
 footer .contact a {
   width: -moz-fit-content;
@@ -650,6 +660,9 @@ footer .contact .contact-banner li img {
 footer .contact .copyright {
   font-size: 10px;
   color: gray;
+}
+footer .shop-search {
+  height: 100%;
 }
 footer .shop-search .search-header {
   margin: 0;
