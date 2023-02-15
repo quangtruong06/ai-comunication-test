@@ -64,7 +64,21 @@ $XL: 1170px;
         border: none;
     }
 }
+#scrolltop{
+    position: fixed;
+    bottom: 100px;
+    right: 16px;
+    z-index: 999;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fc3d9f ;
+    // border: 1px solid #fc3d9f;
+}
 body {
+
+    min-width: 768px;
     background-color: white;
     height: 100%;
 }
@@ -80,6 +94,12 @@ body.show-menu {
                 background-color: white;
 
             }
+        }
+        & .show-img{
+            display: none;
+        }
+        & .ads{
+            display: none;
         }
         & .header-menu{
             & .main-menu{
@@ -103,6 +123,7 @@ header {
     position: relative;
     display: flex;
     width: 100%;
+    min-height: 572px;
     & .banner-left {
         float: left;
         width: calc(100% - 350px);
@@ -141,13 +162,12 @@ header {
             width: calc(130%);
             img {
                 margin: 0px;
-                height: 300px;
+                height: 250px;
                 width: 100%;
-                object-fit: fill;
+                object-fit: cover;
             }
         }
         & .ads {
-            height: 300px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -210,6 +230,37 @@ header {
         height: 100%;
         width: 350px;
         background: white;
+        & .main-menu{
+            position: absolute;
+            top: 30%;
+            left: 32px;
+            text-align: left;
+            transform: translateY(-50%);
+            & .main-menu-title{
+                font-size: 13px;
+                opacity: 0.7;
+                & .title-lar{
+                    color: #f2accc;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+            
+           }
+        & .sub-menu{
+            position: absolute;
+            left: 32px;
+            bottom: 15%;
+            text-align: left;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 8px;
+            grid-row-gap: 8px;
+            & div{
+                color: #f2accc;
+                font-size: 13px;
+            }
+        }
     }
 }
 main {
@@ -218,7 +269,7 @@ main {
 #news {
     @include barAttr();
     & .news-bar {
-        width: 80%;
+        width: 100%;
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -241,7 +292,7 @@ main {
     ul {
         padding: 0;
         margin: $small-spacing 0px 0px 0px;
-        width: 80%;
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 16px;
@@ -300,7 +351,7 @@ main {
         grid-template-columns: 30% 70%;
         gap: 50px;
         margin-top: $spacing;
-        width: 80%;
+        width: 100%;
         @include Responsive(SM) {
             width: 100%;
         }
@@ -412,7 +463,7 @@ main {
 #floors {
     @include barAttr();
     & .floors-bar {
-        width: 80%;
+        width: 100%;
         @include Responsive(SM) {
             width: 100%;
         }
@@ -427,7 +478,7 @@ main {
         margin-top: $spacing;
     }
     & .floors-list {
-        width: 80%;
+        width: 100%;
         @include Responsive(SM) {
             width: 100%;
         }
@@ -508,7 +559,7 @@ main {
             border-radius: 5px;
             height: 150px;
             width: 100%;
-            object-fit: fill;
+            object-fit: cover;
         }
         & .date {
             margin-top: 8px;
@@ -530,28 +581,18 @@ main {
     }
 }
 footer {
-    display: inline-block;
-    margin-top: 60px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
     height: 300px;
     & .footer-img {
-        float: left;
-        width: calc(100% / 3);
-        height: 100%;
-        box-sizing: border-box;
         img {
             width: 100%;
-            height: 100%;
+            object-fit: cover;
         }
     }
     & .contact {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        float: left;
-        width: calc(100% / 3);
-        box-sizing: border-box;
-        padding: 30px 30px 0px 30px;
         a {
             width: fit-content;
             & .contact-logo {
@@ -589,11 +630,7 @@ footer {
         }
     }
     & .shop-search {
-        padding: 30px 30px 0px 30px;
-        float: left;
-        height: 100%;
-        width: calc(100% / 3);
-        box-sizing: border-box;
+
         & .search-header {
             margin: 0;
             font-size: 30px;
@@ -651,10 +688,8 @@ footer {
             }
         }
         & .search-bar {
-            width: 100%;
             margin-top: 16px;
             form {
-                width: 100%;
                 & .type-search {
                     border: none;
                     outline: none;
@@ -662,14 +697,14 @@ footer {
                     height: 30px;
                     padding-right: 10px;
                     font-family: $jpFont;
-                    width: 65%;
+                    width: calc(100% - (32px + 80px + 8px));
                 }
                 & .submit-btn {
+                    width: 80px;
                     font-family: $jpFont;
                     margin-left: 8px;
                     background-color: deeppink;
                     color: white;
-                    width: auto;
                     padding: 0px 16px;
                     box-sizing: border-box;
                     height: 30px;
@@ -688,9 +723,8 @@ footer {
             }
         }
         & .nav-links {
-            margin-top: $spacing;
+            margin-top: $spacing * 2;
             list-style-type: none;
-            margin: 40px 0px 0px 0px;
             padding: 0;
             li {
                 display: block;

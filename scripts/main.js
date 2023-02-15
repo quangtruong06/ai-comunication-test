@@ -35,6 +35,9 @@ $(".nav-button li").click(function () {
       break;
   }
 });
+$("#scrolltop").click(function(){
+  $('html, body').animate({scrollTop:0}, 'slow');
+});
 $("header .banner-right .logo-menu .menu").click(function(){
   $("body").toggleClass("show-menu");
 });
