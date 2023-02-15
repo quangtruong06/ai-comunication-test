@@ -36,11 +36,11 @@ $(".nav-button li").click(function () {
   }
 });
 $("header .banner-right .logo-menu .menu").click(function(){
-  $("body").toggleClass("showmenu");
+  $("body").toggleClass("show-menu");
 });
 $('.slider-items').slick({
   infinite: true,
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 3
 });
 $('#search-form').submit(function(){return false;});

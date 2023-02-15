@@ -27,11 +27,17 @@ body {
   height: 100%;
 }
 
-body.showmenu .header-menu {
+body.show-menu .header-menu {
   display: block;
 }
-body.showmenu .banner-right .logo-menu .menu {
-  background-image: url(images/ic_menu_x.PNG);
+body.show-menu .banner-right .logo-menu .menu {
+  background-image: url(images/x-mark.png);
+  background-repeat: no-repeat;
+  background-color: white;
+}
+body.show-menu .banner-right .header-menu .main-menu .main-menu-title span {
+  font-size: 25px;
+  color: #ff1493;
 }
 
 @font-face {
@@ -89,6 +95,8 @@ header .banner-right .show-img img {
   margin: 0px;
   height: 300px;
   width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 header .banner-right .ads {
   height: 300px;
@@ -497,10 +505,13 @@ main {
   margin: 16px;
 }
 #slider .slide-item img {
+  background-color: deeppink;
   max-width: 100%;
   border-radius: 5px;
-  height: 200px;
+  height: 150px;
   width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 #slider .slide-item .date {
   margin-top: 8px;
@@ -547,7 +558,11 @@ footer .contact {
   box-sizing: border-box;
   padding: 30px 30px 0px 30px;
 }
-footer .contact .contact-logo {
+footer .contact a {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+footer .contact a .contact-logo {
   height: 50px;
   margin-bottom: 4px;
 }
@@ -568,6 +583,9 @@ footer .contact .contact-banner li {
   box-sizing: border-box;
   float: left;
   list-style-type: none;
+}
+footer .contact .contact-banner li:hover {
+  cursor: pointer;
 }
 footer .contact .contact-banner li img {
   width: 100%;
@@ -597,7 +615,7 @@ footer .shop-search .dropdown {
 footer .shop-search .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-bottom-left-radius: 5%;
@@ -612,6 +630,7 @@ footer .shop-search .dropdown:hover .dropdown-content a {
   text-decoration: none;
   color: black;
   padding: 12px 16px;
+  border-bottom: 0.2px solid;
   box-sizing: border-box;
   display: block;
   width: 100%;

@@ -68,14 +68,27 @@ body {
     background-color: white;
     height: 100%;
 }
-body.showmenu {
+body.show-menu {
     & .header-menu {
         display: block;
     }
     & .banner-right {
         & .logo-menu {
             .menu {
-                background-image: url(images/ic_menu_x.PNG);
+                background-image: url(images/x-mark.png);
+                background-repeat: no-repeat;
+                background-color: white;
+
+            }
+        }
+        & .header-menu{
+            & .main-menu{
+                & .main-menu-title{
+                    span{
+                        font-size: 25px;
+                        color: $deepPink;
+                    }
+                }
             }
         }
     }
@@ -130,6 +143,7 @@ header {
                 margin: 0px;
                 height: 300px;
                 width: 100%;
+                object-fit: fill;
             }
         }
         & .ads {
@@ -488,12 +502,13 @@ main {
     }
     .slide-item {
         margin: 16px;
-
         & img {
+            background-color: deeppink;
             max-width: 100%;
             border-radius: 5px;
-            height: 200px;
+            height: 150px;
             width: 100%;
+            object-fit: fill;
         }
         & .date {
             margin-top: 8px;
@@ -537,9 +552,12 @@ footer {
         width: calc(100% / 3);
         box-sizing: border-box;
         padding: 30px 30px 0px 30px;
-        & .contact-logo {
-            height: 50px;
-            margin-bottom: 4px;
+        a {
+            width: fit-content;
+            & .contact-logo {
+                height: 50px;
+                margin-bottom: 4px;
+            }
         }
         p {
             font-size: 13px;
@@ -552,6 +570,9 @@ footer {
             padding: 0;
             display: inline-block;
             li {
+                &:hover {
+                    cursor: pointer;
+                }
                 padding-right: 16px;
                 width: calc(100% / 3);
                 box-sizing: border-box;
@@ -586,7 +607,7 @@ footer {
             & .dropdown-content {
                 display: none;
                 position: absolute;
-                background-color: #f1f1f1;
+                background-color: white;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
                 border-bottom-left-radius: 5%;
@@ -601,6 +622,7 @@ footer {
                         text-decoration: none;
                         color: black;
                         padding: 12px 16px;
+                        border-bottom: 0.2px solid;
                         box-sizing: border-box;
                         display: block;
                         width: 100%;
